@@ -13,7 +13,7 @@ class BookSubjectSpider(CrawlSpider):
     start_urls = ["https://book.douban.com/subject/26628811/"]
     rules = (
         Rule(
-            LinkExtractor(allow=("https://book.douban.com/subject/(\\d)+/$")),
+            LinkExtractor(allow=("https://book.douban.com/subject/(\d)+/$")),
             callback="parse_item",
             follow=True,
             process_request="cookie",
